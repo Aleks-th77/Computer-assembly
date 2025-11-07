@@ -49,6 +49,11 @@ h6 {
     margin: 0;
 }
 
+.body.modal-open {
+  overflow: hidden;
+  padding-right: var(--scrollbar-width);
+}
+
 .container {
     width: 130rem;
     margin: 0 auto;
@@ -59,6 +64,10 @@ h6 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
+}
+
+:root {
+    --text-size-adjust: 1.6rem;
 }
 
 .button {
@@ -93,7 +102,7 @@ h6 {
 }
 
 .header__nav a {
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 150%;
 }
 
@@ -155,8 +164,6 @@ h6 {
     align-items: center;
     justify-content: center;
     flex-direction: column;
-    margin-right: 3rem;
-    border-radius: 1rem;
 }
 
 .timer__item:not(:last-child) {
@@ -170,7 +177,7 @@ h6 {
 }
 
 .timer__text {
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 140%;
     opacity: 0.4;
 }
@@ -203,7 +210,7 @@ h6 {
 }
 
 .work__description {
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 160%;
 }
 
@@ -237,7 +244,7 @@ h6 {
 .process__description {
     max-width: 41.1rem;
     margin-bottom: 8rem;
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 160%;
     opacity: 0.5;
 }
@@ -318,12 +325,12 @@ h6 {
 .command__professional {
     margin-bottom: 3rem;
     font-weight: 400;
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 160%;
 }
 
 .command__link {
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 150%;
     border: .1rem solid #FFFFFF;
 }
@@ -337,6 +344,7 @@ h6 {
     justify-content: center;
     align-items: center;
     flex-direction: column;
+    padding-bottom: 10rem;
 }
 
 .assembly__header {
@@ -348,7 +356,7 @@ h6 {
 
 .assembly__description {
     margin-bottom: 4.5rem;
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 160%;
 }
 
@@ -356,7 +364,7 @@ h6 {
     margin-bottom: 5.08rem;
     background: linear-gradient(94.78deg, #DF5950 11.19%, #451046 93.72%);
     font-weight: 700;
-    font-size: 1.6rem;
+    font-size: var(--text-size-adjust);
     line-height: 150%;
 }
 
@@ -367,7 +375,7 @@ h6 {
 .assembly__item {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: center; 
     background: linear-gradient(94.26deg, #C89AFC 9.51%, #7C6AFA 90.23%);
     border-radius: 50%;
     width: 5rem;
@@ -382,4 +390,81 @@ h6 {
 
 .assembly__item:not(:last-child) {
     margin-right: 3rem;
+}
+
+.modal {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    overflow-x: hidden;
+    overflow-y: auto;
+    z-index: 10;
+    padding: 3rem 0;
+    background: rgba(0, 0, 0, 0.8);
+    display: none;
+}
+
+.modal__inner {
+    position: relative;
+    width: 66.3rem;
+    padding: 9rem 1rem;
+    background: #2C2C2C;
+    text-align: center;
+}
+
+.modal__header {
+    font-weight: 700;
+    font-size: 4.8rem;
+    line-height: 140%;
+    margin-bottom: 1rem;
+}
+
+.modal__subheader {
+    margin-bottom: 2.8rem;
+    font-size: 1.6rem;
+    opacity: 0.5;
+}
+
+
+.modal__elements {
+    width: 45.4rem;
+    margin: 0 auto 3.2rem auto;
+}
+
+ .modal__item {
+    height: 4.4rem; 
+ }
+
+ .modal__input {
+    width: 100%;
+    height: 100%;
+    background-color: grey;
+    border-radius: 5rem;
+    font-size: 1.4rem;
+    line-height: 160%;
+    color: #FFFFFF;
+    opacity: 0.8;
+ }
+
+.modal__item:not(:last-child){
+    margin-bottom: 1.8rem;
+}
+
+.modal__close {
+    position: absolute;
+    top: 2%;
+    right: 2%;
+    width: 5rem;
+    height: 5rem;
+    cursor: pointer;
+}
+
+.noscroll {
+    overflow: hidden;
+    height: 100%;
 }
